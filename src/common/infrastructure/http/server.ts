@@ -1,9 +1,7 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import { env } from '../env'
 import { app } from './app'
 
-const PORT = process.env.PORT
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`)
+app.listen(env.PORT, () => {
+  console.log(`Server is running on http://localhost:${env.PORT}`)
+  console.log(`API docs available at http://localhost:${env.PORT}/docs`)
 })
